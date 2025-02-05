@@ -1,0 +1,17 @@
+[package]
+name = "grayscale"
+version = "0.1.0"
+edition = "2021"
+
+[unstable]
+build-std = ["core", "alloc"]
+
+[build]
+rustflags = [
+  "-C", "link-self-contained=no",
+  "-C", "link-arg=-zstack-size=8192",
+  "-C", "link-arg=--export=__heap_base",
+  "-C", "link-arg=--export=__data_end",
+  "-C", "link-arg=--strip-all",
+  "-C", "link-arg=--no-entry",
+  ]

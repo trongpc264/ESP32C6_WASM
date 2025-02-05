@@ -1,0 +1,12 @@
+[package]
+name = "grayscale"
+version = "0.1.0"
+edition = "2021"
+
+[build]
+rustflags = [
+  "-C", "link-arg=-zstack-size=8192",
+  "-C", "link-arg=--export=__heap_base",
+  "-C", "link-arg=--export=__data_end",
+  "-C", "link-arg=--strip-all",
+]
