@@ -1,0 +1,3 @@
+/home/tdn/ESP32C6/tools/binarydump-tool/build/CMakeFiles/binarydump.dir
+/home/tdn/ESP32C6/tools/binarydump-tool/build/CMakeFiles/edit_cache.dir
+/home/tdn/ESP32C6/tools/binarydump-tool/build/CMakeFiles/rebuild_cache.dir

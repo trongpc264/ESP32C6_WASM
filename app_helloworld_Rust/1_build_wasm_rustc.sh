@@ -29,7 +29,7 @@ rustc   -C link-self-contained=no \
         --target wasm32-wasip1 src/main.rs
 mv main.wasm grayscale.wasm
 
-echo "Generate grayscale.h .."
+echo "Generate grayscale_rust.h .."
 ../tools/binarydump-tool/build/binarydump \
         -o grayscale_rust.h \
         -n wasm_grayscale_file \
