@@ -28,7 +28,7 @@ echo "Build wasm app .."
         -Wl,--allow-undefined
          
 
-echo "Generate grayscale.h .."
+echo "Generate grayscale_c.h .."
 ../tools/binarydump-tool/build/binarydump \
         -o grayscale_c.h \
         -n wasm_grayscale_file \

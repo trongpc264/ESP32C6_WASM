@@ -3,9 +3,6 @@ name = "grayscale"
 version = "0.1.0"
 edition = "2021"
 
-[unstable]
-build-std = ["core", "alloc"]
-
 [build]
 rustflags = [
   "-C", "link-self-contained=no",

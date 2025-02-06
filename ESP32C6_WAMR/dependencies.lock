@@ -8,7 +8,7 @@ dependencies:
     - name: idf
       version: '>=4.4'
     source:
-      path: /home/tdn/ESP32C6/wasm-micro-runtime
+      path: /home/tdn/ESP32C6/ESP32C6_WAMR/wasm-micro-runtime
       type: local
     targets:
     - esp32
@@ -19,6 +19,6 @@ dependencies:
 direct_dependencies:
 - idf
 - wasm-micro-runtime
-manifest_hash: e536380307b9a761b24ab995285d898df7a5f8dc531ab3122dd467c56bcee6ce
+manifest_hash: 51a388568ab089f69b5b85e834b89fce54f2f87593f5391af46749a45e27c50d
 target: esp32c6
 version: 2.0.0
