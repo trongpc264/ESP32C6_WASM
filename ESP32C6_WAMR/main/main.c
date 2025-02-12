@@ -8,8 +8,9 @@
 #include "freertos/task.h"
 #include "wasm_export.h"
 #include "bh_platform.h"
-//#include "grayscale_c.h"
-#include "grayscale_rust.h"
+//#include "wasm_grayscale_c.h"
+#include "wasm_helloworld_rust.h"
+//#include "wasm_helloworld_c.h"
 
 #include "esp_log.h"
 
@@ -59,11 +60,10 @@ iwasm_main(void *arg)
         return NULL;
     }
 
-#if WASM_ENABLE_INTERP != 0
     ESP_LOGI(LOG_TAG, "Run wamr with interpreter");
 
-    wasm_file_buf = (uint8_t *)wasm_grayscale_file;
-    wasm_file_buf_size = sizeof(wasm_grayscale_file);
+    wasm_file_buf = (uint8_t *)wasm_application_file;
+    wasm_file_buf_size = sizeof(wasm_application_file);
 
     /* load WASM module */
     if (!(wasm_module = wasm_runtime_load(wasm_file_buf, wasm_file_buf_size,
@@ -74,8 +74,8 @@ iwasm_main(void *arg)
 
     ESP_LOGI(LOG_TAG, "Instantiate WASM runtime");
     if (!(wasm_module_inst =
-              wasm_runtime_instantiate(wasm_module, 1 * 1024 , // stack size (original 32*1024)
-                                       1 * 1024,              // heap size (original 32*1024)
+              wasm_runtime_instantiate(wasm_module, 8192 , // stack size (original 32*1024)
+                                        32*1024,           // heap size (original 32*1024)
                                        error_buf, sizeof(error_buf)))) {
         ESP_LOGE(LOG_TAG, "Error while instantiating: %s", error_buf);
         goto fail2interp;
@@ -95,7 +95,6 @@ fail2interp:
     wasm_runtime_unload(wasm_module);
 
 fail1interp:
-#endif
 
     /* destroy runtime environment */
     ESP_LOGI(LOG_TAG, "Destroy WASM runtime");

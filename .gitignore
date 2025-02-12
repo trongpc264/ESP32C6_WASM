@@ -1,7 +1,5 @@
 app_grayscale_C/build
 app_grayscale_Rust/target
 app_helloworld_Rust/target
-ESP32C6_WAMR/wasm-micro-runtime
+ESP32C6_WAMR/wasm-micro-runtime/
 ESP32C6_WAMR/build
-ESP32C6_WAMR/.devcontainer
-ESP32C6_WAMR/.vscode

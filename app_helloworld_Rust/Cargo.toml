@@ -1,10 +1,11 @@
 [package]
-name = "grayscale"
+name = "helloworld"
 version = "0.1.0"
 edition = "2021"
 
 [build]
 rustflags = [
+  "-C", "link-arg=--initial-memory=65536",
   "-C", "link-arg=-zstack-size=8192",
   "-C", "link-arg=--export=__heap_base",
   "-C", "link-arg=--export=__data_end",

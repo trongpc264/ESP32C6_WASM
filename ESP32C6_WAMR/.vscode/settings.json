@@ -1,0 +1,13 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.espIdfPath": "/home/tdn/esp/esp-idf",
+    "idf.openOcdConfigs": [
+        "board/esp32c6-builtin.cfg"
+    ],
+    "idf.port": "/dev/ttyACM0",
+    "idf.toolsPath": "/home/tdn/.espressif",
+    "idf.flashType": "JTAG",
+    "files.associations": {
+        "cstdint": "c"
+    }
+}

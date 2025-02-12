@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "grayscale"
+name = "helloworld"
 version = "0.1.0"
